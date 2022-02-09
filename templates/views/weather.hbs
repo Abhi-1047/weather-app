@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{>head_links}}
+</head>
+<body>
+
+  {{>navbar}}
+
+<!-- main Header -->
+
+<div class="container-fluid main_header">
+    <div class="row">
+        <div class="col-md-10 col-12 mx-auto">
+               
+               <div class="main_content">
+                   <form action="" class="temp_form">
+                       <input type="text" id="cityname" placeholder="Enter Your City Name" autocomplete="off">
+                       <input type="submit" value="search" id="submit">
+                   </form>
+
+               </div>
+
+               <div class="tempInfo">
+                   <div class="top_layer">
+                       <p id="day">Friday</p>
+                       <p id="date">8 Feb 2022</p>
+                   </div>
+
+                   <div class="main_layer">
+                       <p id="city_name">Get Output Here</p>
+                       <div class="middle_layer  data_hide">
+                           <p id="temp"><span id="temp_real_val">0</span><sup>o</sup>C </p>
+                           <p id="temp_status"> <i class="fa fa-cloud"></i> </p>
+
+                       </div>
+                   </div>
+               </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+{{>footer}}
+
+<script src="js/main.js"></script>
+
+<script>
+    let day = document.getElementById('day')
+    const getCurrentDay = ()=> {
+        let weekday = new Array(7)
+        weekday[0] = 'sunday';
+        weekday[1] = 'monday';
+        weekday[2] = 'tuesday';
+        weekday[3] = 'wednesday';
+        weekday[4] = 'thusday';
+        weekday[5] = 'friday';
+        weekday[6] = 'saturday';
+
+        let currentDate = new Date();
+        let days = weekday[currentDate.getDay()];
+
+        day.innerText = days;
+    }
+
+    getCurrentDay();
+
+let dates = document.getElementById('date')
+        let months = [
+        "Jan"
+        "Feb"
+        "Mar"
+        "Apr"
+        "May"
+        "June"
+        "July"
+        "Aug"
+        "Sept"
+        "Oct"
+        "Nov"
+        "Dec"
+        ];
+
+        let now = new Date();
+        let month = months[now.getMonth() + 1];
+        let date = now.getDate();
+        let year = now.getFullYear();
+
+        dates.innerText = `${date} ${month} ${year}`
+
+</script>
+
+</body>
+</html>
+
+{{!-- 
+    let date = new Date().getDate();
+    let month = new Date().getMonth();
+    let year = new Date().getFullYear();
+
+    dates.innerText = `${date} ${month} ${year}`; --}}

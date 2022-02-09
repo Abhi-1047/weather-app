@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{>head_links}}
+
+</head>
+<body>
+  
+    {{>navbar}}
+
+<!-- main Header -->
+
+<div class="container-fluid main_header">
+    <div class="row">
+        <div class="col-md-10 col-12 mx-auto">
+            <div class="row">
+                {{!-- left-side-div  --}}
+                          
+                <div class="col-md-12 col-12 main_header_left align-items-center">
+
+                    <figure class="errimg">
+                        <img src="image/404.jpg" alt="Abhi" class="img-fluid" title="abhi">
+                    </figure>
+               
+                    <p>Welcome to My App</p>
+                    <h1>{{errorMsg}}</h1>
+
+                    <a href="/"><button>Go Back</button></a>
+                </div>
+                <!-- rightSide div -->
+      
+              
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+{{>footer}}
+
+</body>
+</html>
+
